@@ -1,5 +1,5 @@
 ---
-name: supabase-schema-design
+name: fzx_supabase_skills
 description: Use when designing Supabase/PostgreSQL database tables, creating schemas, defining relationships, writing RLS policies, or making decisions about naming conventions, column types, primary keys, foreign keys, and indexes in Supabase projects
 ---
 

@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🐘 Supabase Schema Design
+# 🐘 fzx_supabase_skills
 
 **生产级 Supabase/PostgreSQL 建表规范 — 让 AI Agent 写出专业级数据库 Schema**
 
@@ -51,7 +51,7 @@ curl -o SKILL.md https://raw.githubusercontent.com/ai-fzx/fzx_supabase_skills/ma
 
 ```bash
 # Claude Code
-cp SKILL.md ~/.claude/skills/supabase-schema-design/
+cp SKILL.md ~/.claude/skills/fzx_supabase_skills/
 
 # Cursor / Copilot 等支持 Skills 的 Agent
 # 放到对应的 skills 目录即可
@@ -76,7 +76,7 @@ Manus 原生支持 Agent Skills 开放标准，导入本 Skill 只需两步：
 **使用方式：**
 
 ```
-/supabase-schema-design 帮我设计一个电商系统的数据库表
+/fzx_supabase_skills 帮我设计一个电商系统的数据库表
 ```
 
 > 💡 Manus 采用**渐进式加载**（Progressive Disclosure），即使 SKILL.md 内容丰富，也只在触发时加载指令部分（<5000 tokens），不会浪费上下文窗口。
@@ -84,7 +84,7 @@ Manus 原生支持 Agent Skills 开放标准，导入本 Skill 只需两步：
 ### 3. 让 AI 按规范建表
 
 ```
-> 帮我设计一个博客系统的数据库表，遵循 supabase-schema-design 规范
+> 帮我设计一个博客系统的数据库表，遵循 fzx_supabase_skills 规范
 ```
 
 AI Agent 将自动生成符合规范的完整 SQL（含 RLS、索引、Trigger）。
@@ -182,7 +182,7 @@ Supabase 不默认启用 RLS。如果表没有启用 RLS，持有 `anon key` 的
 Manus 原生支持 Agent Skills 开放标准。你可以：
 1. 从 GitHub 一键导入：在 Manus 中输入 `导入 GitHub 技能：https://github.com/ai-fzx/fzx_supabase_skills`
 2. 对话导入：将 SKILL.md 内容发给 Manus，说"将此保存为技能"
-3. 使用时输入 `/supabase-schema-design` 即可触发
+3. 使用时输入 `/fzx_supabase_skills` 即可触发
 
 Manus 采用渐进式加载，只在触发时加载指令，不会浪费上下文。
 </details>
