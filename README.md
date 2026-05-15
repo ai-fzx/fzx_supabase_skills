@@ -15,7 +15,7 @@
 
 ## 🎯 这是什么？
 
-一套面向 **AI 编程助手**（Claude Code、Cursor、Copilot 等）的 Supabase 建表规范 Skill。遵循这些规范，AI Agent 生成的 SQL 将自动满足：
+一套面向 **AI 编程助手**（Manus、Claude Code、Cursor、Copilot 等）的 Supabase 建表规范 Skill。遵循这些规范，AI Agent 生成的 SQL 将自动满足：
 
 - ✅ 生产级安全（RLS 行级安全必须开启）
 - ✅ 高性能（外键必索引、RLS 策略列必索引）
@@ -56,6 +56,30 @@ cp SKILL.md ~/.claude/skills/supabase-schema-design/
 # Cursor / Copilot 等支持 Skills 的 Agent
 # 放到对应的 skills 目录即可
 ```
+
+### 🤖 在 Manus 上使用
+
+Manus 原生支持 Agent Skills 开放标准，导入本 Skill 只需两步：
+
+**方式一：从 GitHub 一键导入**
+
+1. 打开 [Manus](https://manus.im)，进入对话界面
+2. 输入：`导入 GitHub 技能：https://github.com/ai-fzx/fzx_supabase_skills`
+3. Manus 自动读取 `SKILL.md` 并注册技能
+
+**方式二：对话中直接导入**
+
+1. 在 Manus 对话中发送本仓库的 `SKILL.md` 内容
+2. 告诉 Manus：**"将此 Supabase 建表规范保存为技能"**
+3. Manus 自动打包为可复用技能
+
+**使用方式：**
+
+```
+/supabase-schema-design 帮我设计一个电商系统的数据库表
+```
+
+> 💡 Manus 采用**渐进式加载**（Progressive Disclosure），即使 SKILL.md 内容丰富，也只在触发时加载指令部分（<5000 tokens），不会浪费上下文窗口。
 
 ### 3. 让 AI 按规范建表
 
@@ -150,6 +174,17 @@ Supabase 不默认启用 RLS。如果表没有启用 RLS，持有 `anon key` 的
 <summary><strong>这个 Skill 支持 Cursor / Copilot 吗？</strong></summary>
 
 支持。SKILL.md 是纯 Markdown 规范文件，任何能读取 Skills 的 AI Agent 都可以使用。将文件放入对应 Agent 的 skills 目录即可。
+</details>
+
+<details>
+<summary><strong>如何在 Manus 上使用？</strong></summary>
+
+Manus 原生支持 Agent Skills 开放标准。你可以：
+1. 从 GitHub 一键导入：在 Manus 中输入 `导入 GitHub 技能：https://github.com/ai-fzx/fzx_supabase_skills`
+2. 对话导入：将 SKILL.md 内容发给 Manus，说"将此保存为技能"
+3. 使用时输入 `/supabase-schema-design` 即可触发
+
+Manus 采用渐进式加载，只在触发时加载指令，不会浪费上下文。
 </details>
 
 ## 🤝 贡献
